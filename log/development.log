@@ -452,3 +452,24 @@ Processing by Devise::SessionsController#new as HTML
   Rendered /Users/omidbachari/.gem/ruby/2.0.0/gems/devise-3.2.4/app/views/devise/shared/_links.erb (0.7ms)
   Rendered /Users/omidbachari/.gem/ruby/2.0.0/gems/devise-3.2.4/app/views/devise/sessions/new.html.erb within layouts/application (7.5ms)
 Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (292.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (95.9ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddDeviseToUsers (20140705131719)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (596.3ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "username" character varying(255) NOT NULL) [0m
+  [1m[35m (240.9ms)[0m  ALTER TABLE "users" ADD COLUMN "email" character varying(255) DEFAULT '' NOT NULL
+  [1m[36m (5.0ms)[0m  [1mALTER TABLE "users" ADD COLUMN "encrypted_password" character varying(255) DEFAULT '' NOT NULL[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" ADD COLUMN "reset_password_token" character varying(255)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD COLUMN "reset_password_sent_at" timestamp[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD COLUMN "remember_created_at" timestamp
+  [1m[36m (4.9ms)[0m  [1mALTER TABLE "users" ADD COLUMN "sign_in_count" integer DEFAULT 0 NOT NULL[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" ADD COLUMN "current_sign_in_at" timestamp
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD COLUMN "last_sign_in_at" timestamp[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD COLUMN "current_sign_in_ip" character varying(255)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD COLUMN "last_sign_in_ip" character varying(255)[0m
+  [1m[35m (1.5ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (69.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140705131719"]]
+  [1m[36m (2.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
