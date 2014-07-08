@@ -41,6 +41,9 @@ group :development, :test do
   gem 'launchy'
   gem 'pry-rails'
   gem 'dotenv-rails'
+  gem 'shoulda-matchers'
+  gem 'valid_attribute'
+  gem 'factory_girl_rails'
 end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

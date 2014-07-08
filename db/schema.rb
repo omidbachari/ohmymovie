@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20140708145652) do
   create_table "movies", force: true do |t|
     t.string  "title",    null: false
     t.integer "year",     null: false
-    t.integer "synopsis", null: false
+    t.string  "synopsis", null: false
   end
 
   create_table "users", force: true do |t|

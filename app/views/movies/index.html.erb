@@ -1,8 +1,13 @@
-<ul>
-<% @movies.each do |movie| %>
-  <li><%= movie.title %><%= movie.year %></li><br>
-  <ul>
-    <li></li>
-  </ul>
+
+<% if @movies.empty? %>
+  <p>Not found</p>
 <% end %>
+
+<ul>
+  <% @movies.each do |movie| %>
+    <li><%= movie.title %><%= movie.year %></li><br>
+    <ul>
+      <li></li>
+    </ul>
+  <% end %>
 </ul>
