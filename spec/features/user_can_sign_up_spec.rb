@@ -12,7 +12,7 @@ feature '', %Q(
   scenario '' do
 
 
-    visit cars_path
+    visit root_path
 
     expect(page).to have_content
   end
