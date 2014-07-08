@@ -47,6 +47,6 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+gem 'httparty'
 gem 'devise'
 gem 'rails_12factor', group: :production
