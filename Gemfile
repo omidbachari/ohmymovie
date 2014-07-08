@@ -15,7 +15,11 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
+gem 'bootstrap-sass'
 gem 'jquery-rails'
+
+
+gem 'autoprefixer-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -36,12 +40,16 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'pry-rails'
+  gem 'dotenv-rails'
+  gem 'shoulda-matchers'
+  gem 'valid_attribute'
+  gem 'factory_girl_rails'
 end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+gem 'httparty'
 gem 'devise'
 gem 'rails_12factor', group: :production
