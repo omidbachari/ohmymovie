@@ -5,9 +5,16 @@
 
 <ul>
   <% @movies.each do |movie| %>
-    <li><%= movie.title %><%= movie.year %></li><br>
-    <ul>
-      <li></li>
-    </ul>
+    <li>
+      <%= movie["title"] %>
+      <%= movie["year"] %>
+    </li>
+    <% if !movie["synopsis"].empty? %>
+      <ul>
+        <li>
+          <%= movie["synopsis"] %>
+        </li>
+      </ul>
+    <% end %>
   <% end %>
 </ul>

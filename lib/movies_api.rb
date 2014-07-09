@@ -1,6 +1,5 @@
-require 'dotenv-rails'
-
 class MoviesApi
+
   include HTTParty
 
   base_uri 'http://api.rottentomatoes.com/api/public/v1.0'
@@ -15,6 +14,6 @@ class MoviesApi
 
   def movies_search(q)
     q = CGI::escape(q)
-    self.class.get('/movies.json', { query: { apikey: @key, q: q}})
+    JSON.parse(self.class.get('/movies.json', { query: { apikey: @key, q: q}}))
   end
 end

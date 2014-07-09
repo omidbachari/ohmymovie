@@ -7,4 +7,6 @@ class Movie < ActiveRecord::Base
     where("title ILIKE ?", "%#{search}%")
   end
 
+
+
 end
