@@ -7,9 +7,9 @@ feature 'user can see list of recent queries', %Q(
   So I don't have to waste my time by retyping
 
 ) do
-  before :each do
-    MoviesApi.any_instance.stub(:movies_search).and_return({ movies: [] })
-  end
+
+
+
   # Acceptance Criteria
 
   # * A link appears with the content of a past query
@@ -17,7 +17,6 @@ feature 'user can see list of recent queries', %Q(
   # * A query that has never been performed will be stored in the database
 
   scenario 'a link appears with the content of a past query' do
-
     FactoryGirl.create(:query, content: "Happy Gilmore")
 
     visit root_path

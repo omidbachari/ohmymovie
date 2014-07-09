@@ -11,4 +11,10 @@ hi!
   </p>
 <% end %>
 
+<h3>Recent Searches</h3>
+<ul>
+  <% @queries.each do |query| %>
+    <li><%= query.content %></li>
+  <% end %>
+</ul>
 

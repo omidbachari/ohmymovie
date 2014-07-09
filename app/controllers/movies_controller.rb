@@ -8,6 +8,7 @@ class MoviesController < ApplicationController
       @movies = movies['movies']
 
     end
+
   end
 end
 
