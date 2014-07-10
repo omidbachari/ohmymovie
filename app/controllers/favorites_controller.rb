@@ -1,0 +1,4 @@
+class FavoritesController
+
+
+end

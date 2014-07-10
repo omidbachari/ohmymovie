@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index]
 
-  resources :movies, only: [:index]
+  resources :movies, only: [:index, :create]
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
