@@ -1,8 +1,11 @@
 class MoviesController < ApplicationController
   def index
-    @movies = []
-    if params[:search]
-      @movies = Movie.search(params[:search])
+    if params[:search] && !params[:search].empty?
+      @movies = Movie.api_search(params[:search])
+      Query.remember_recent(params[:search])
+    else
+      flash[:notice] = "You performed an empty search - So here are some of our user favorite movies"
+      @movies = Movie.all
     end
   end
 end

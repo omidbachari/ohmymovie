@@ -1,5 +1,3 @@
-hi!
-
 <%= link_to 'Sign in', new_user_session_path %>
 
 
@@ -11,4 +9,10 @@ hi!
   </p>
 <% end %>
 
+<h3>Recent Searches</h3>
+<ul>
+  <% @queries.each do |query| %>
+    <li><%= link_to query.content, movies_path(search: query.content) %></li>
+  <% end %>
+</ul>
 
