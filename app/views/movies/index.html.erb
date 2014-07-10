@@ -3,19 +3,13 @@
   <p>Not found</p>
 <% end %>
 
-<ul>
-  <% @movies.each do |movie| %>
-    <li>
-      <%= movie["title"] %>
-      <%= movie["year"] %>
-      <%= movie["id"] %>
-    </li>
-    <% if !movie["synopsis"].empty? %>
-      <ul>
-        <li>
-          <%= movie["synopsis"] %>
-        </li>
-      </ul>
-    <% end %>
+
+<% @movies.each do |movie| %>
+  <div>
+    <%= movie["title"] %>
+    <%= movie["year"] %>
+  <% if !movie["synopsis"].empty? %>
+      <%= movie["synopsis"] %>
   <% end %>
-</ul>
+  </div>
+<% end %>
