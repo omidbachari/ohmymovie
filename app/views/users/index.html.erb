@@ -1,0 +1,9 @@
+<h1>Favorites Page</h1>
+
+<% @favorites.each do |favorite| %>
+<div>
+<%= favorite.movie.title %>
+<%= favorite.movie.year %>
+<%= favorite.movie.synopsis %>
+</div>
+<% end %>

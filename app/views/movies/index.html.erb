@@ -8,8 +8,11 @@
   <div>
     <%= movie["title"] %>
     <%= movie["year"] %>
-  <% if !movie["synopsis"].empty? %>
+    <% if user_signed_in? %>
+      <%= button_to 'Favorite', { controller: :movies, action: :create, title: movie["title"], year: movie["year"], synopsis: movie["synopsis"], rotten_tomatoes_id: movie["id"] }, method: :post %>
+    <% end %>
+    <% if !movie["synopsis"].empty? %>
       <%= movie["synopsis"] %>
-  <% end %>
+    <% end %>
   </div>
 <% end %>

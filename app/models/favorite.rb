@@ -4,5 +4,4 @@ class Favorite < ActiveRecord::Base
 
   validates :user, presence: true
   validates :movie, presence: true
-  validates :rotten_tomatoes_id, presence: true
 end

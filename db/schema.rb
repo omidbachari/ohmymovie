@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140710152350) do
+ActiveRecord::Schema.define(version: 20140711152108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20140710152350) do
   create_table "movies", force: true do |t|
     t.string  "title",              null: false
     t.integer "year",               null: false
-    t.string  "synopsis",           null: false
     t.integer "rotten_tomatoes_id"
+    t.text    "synopsis"
   end
 
   add_index "movies", ["rotten_tomatoes_id"], name: "index_movies_on_rotten_tomatoes_id", unique: true, using: :btree
@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 20140710152350) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "username",                            null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

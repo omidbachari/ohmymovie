@@ -8,8 +8,6 @@ feature 'user can see list of recent queries', %Q(
 
 ) do
 
-
-
   # Acceptance Criteria
 
   # * A link appears with the content of a past query
@@ -51,5 +49,4 @@ feature 'user can see list of recent queries', %Q(
 
     expect(Query.count).to eq(previous_count + 1)
   end
-
 end
