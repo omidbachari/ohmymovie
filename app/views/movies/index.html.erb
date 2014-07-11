@@ -1,10 +1,6 @@
 
-<% if @movies.empty? %>
-  <p>Not found</p>
-<% end %>
 
-
-<% @movies.each do |movie| %>
+  <% @movies.each do |movie| %>
   <div>
     <%= movie["title"] %>
     <%= movie["year"] %>
@@ -15,4 +11,4 @@
       <%= movie["synopsis"] %>
     <% end %>
   </div>
-<% end %>
+  <% end %>
