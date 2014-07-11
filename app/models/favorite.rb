@@ -4,4 +4,5 @@ class Favorite < ActiveRecord::Base
 
   validates :user, presence: true
   validates :movie, presence: true
+  validates :movie, uniqueness: { scope: :user }
 end

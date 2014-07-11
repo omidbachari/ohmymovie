@@ -20,13 +20,16 @@ class MoviesController < ApplicationController
       movie.rotten_tomatoes_id = params[:rotten_tomatoes_id]
     end
     @movie_record.save
-    @favorite = Favorite.create(movie_id: @movie_record.id, user_id: current_user.id)
-    if @movie_record.save && @favorite.save
+
+    @favorite = Favorite.new(movie_id: @movie_record.id, user_id: current_user.id)
+    if @favorite.save
       flash[:notice] = 'You successfully added a favorite movie!'
       redirect_to users_path
     else
-      flash.now[:notice] = 'Something went wrong.'
-      render :'welcome/index'
+      flash[:notice] = 'Something went wrong.'
+      @queries = Query.limit(10).order("created_at DESC")
+      redirect_to :back
+
     end
   end
 

@@ -36,6 +36,6 @@ feature 'user can add movie to favorites when signed in', %Q(
     first('.button_to').click_button('Favorite')
     search_and_display_result
     first('.button_to').click_button('Favorite')
-    expect(page).to have_content('Error')
+    expect(page).to have_content('Something went wrong')
   end
 end
