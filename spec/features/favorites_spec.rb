@@ -28,4 +28,14 @@ feature 'user can add movie to favorites when signed in', %Q(
     expect(page).to have_content('Favorites Page')
     expect(page).to have_content('Forrest Gump')
   end
+  scenario 'favorite button appears for logged in user' do
+    user = FactoryGirl.create(:user)
+    sign_in_as(user)
+    search_and_display_result
+
+    first('.button_to').click_button('Favorite')
+    search_and_display_result
+    first('.button_to').click_button('Favorite')
+    expect(page).to have_content('Error')
+  end
 end
