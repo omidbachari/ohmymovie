@@ -1,11 +1,12 @@
 class MoviesController < ApplicationController
   def index
+    @queries = Query.limit(10).order("created_at DESC")
+    @movies = Movie.all
     if params[:search] && !params[:search].empty?
       @movies = Movie.api_search(params[:search])
       Query.remember_recent(params[:search])
     else
-      flash[:notice] = "You performed an empty search - So here are some of our user favorite movies"
-      @movies = Movie.all
+      flash[:notice] = "You performed an empty search"
     end
   end
   def create
