@@ -27,7 +27,7 @@ class MoviesController < ApplicationController
       flash[:notice] = 'You successfully added a favorite movie!'
       redirect_to users_path
     else
-      flash[:notice] = 'Something went wrong.'
+      flash[:notice] = 'You already have that favorite.'
       @queries = Query.limit(10).order("created_at DESC")
       redirect_to :back
 

@@ -20,5 +20,7 @@
 <%= favorite.movie.title %>
 <%= favorite.movie.year %>
 <%= favorite.movie.synopsis %>
+<%= button_to "Delete", favorite_path(favorite.id), method: :delete %>
 </div>
 <% end %>
+
